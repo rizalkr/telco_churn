@@ -48,12 +48,24 @@ The notebook is organized into 9 sections:
 
 ## Key Findings
 
-- **26.5% overall churn rate** — dataset is moderately imbalanced
-- **Fiber Optic** customers churn at ~42%, vs. DSL at ~19% and no-internet at ~7%
-- **Month-to-month contracts** carry a ~43% churn rate, vs. ~3% for two-year contracts
-- **Churned customers** had a median tenure of only **10 months**, compared to **37 months** for retained customers
-- **Senior citizens** churn at approximately **2x the rate** of non-senior customers
-- **Add-on services** (Online Security, Tech Support) are strongly associated with lower churn rates
+## Executive Summary & Business Strategy
+
+Beyond standard descriptive statistics, this analysis uncovers the latent variables driving customer attrition and formulates actionable retention architectures:
+
+### 1. Product Asymmetry (Demographics vs. Infrastructure)
+* **Finding:** Senior Citizens have a 2x higher churn probability, and Fiber Optic services contribute to the highest attrition rate (42%).
+* **Diagnosis:** A technical literacy gap. Seniors on Fiber Optic networks are highly susceptible to churn when facing minor technical issues due to a lack of automated or prioritized support.
+* **Recommendation:** Deploy automated, zero-cost `TechSupport` routing specifically for the senior demographic on Fiber Optic plans to prevent operational panic and subsequent service cancellation.
+
+### 2. Redefining Loyalty (Survivorship Bias & Trailing Indicators)
+* **Finding:** Correlation matrices show high `tenure` is inversely related to churn risk.
+* **Diagnosis:** `Tenure` is a trailing indicator, not a causal metric. The near-zero churn in high-tenure cohorts is a manifestation of *Survivorship Bias* — they remained because their local network infrastructure happened to be stable. Passive customers who continue paying are trapped in *Customer Inertia*, not necessarily loyal.
+* **Recommendation:** Cease relying on `tenure` as a safety metric. Shift focus to proactive Quality of Service (QoS) monitoring in regions showing high first-month churn spikes.
+
+### 3. Financial Retention Architecture (LTV vs. ARPU)
+* **Finding:** Month-to-month (MTM) customers generate the highest median revenue ($79 to $111+) but possess the maximum churn probability (43%). 
+* **Diagnosis:** Offering cash discounts to retain these high-risk entities is a financial flaw that destroys Average Revenue Per User (ARPU).
+* **Recommendation:** Execute *Ecosystem Lock-in*. Mandate an upgrade to a 1-year contract, compensated purely through the injection of Value-Added Services (VAS) such as priority tech support or streaming bundles. This sacrifices marginal Customer Acquisition Cost (CAC) to secure massive Customer Lifetime Value (LTV) cash flow.(Online Security, Tech Support) are strongly associated with lower churn rates
 
 ---
 
@@ -108,3 +120,4 @@ jupyter notebook telco_churn.ipynb
 ---
 
 *Created as part of a data analytics portfolio.*
+#
