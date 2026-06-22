@@ -53,20 +53,19 @@ The notebook is organized into 9 sections:
 Beyond standard descriptive statistics, this analysis uncovers the latent variables driving customer attrition and formulates actionable retention architectures:
 
 ### 1. Product Asymmetry (Demographics vs. Infrastructure)
-* **Finding:** Senior Citizens have a 2x higher churn probability, and Fiber Optic services contribute to the highest attrition rate (42%).
-* **Diagnosis:** A technical literacy gap. Seniors on Fiber Optic networks are highly susceptible to churn when facing minor technical issues due to a lack of automated or prioritized support.
-* **Recommendation:** Deploy automated, zero-cost `TechSupport` routing specifically for the senior demographic on Fiber Optic plans to prevent operational panic and subsequent service cancellation.
+* **Finding:** Senior Citizens show a significantly higher churn probability, and Fiber Optic services contribute to the highest attrition rate (42%).
+* **Diagnosis:** High likelihood of a confounding variable: Fixed Income alongside a technical literacy gap. Seniors on premium Fiber Optic networks have higher price sensitivity. Churn in this demographic often stems from financial strain coupled with frustration over minor technical issues, rather than just operational panic.
+* **Recommendation:** Deploy a dual-pronged mitigation routing. Implement automated, zero-cost `TechSupport` prioritization for the senior demographic. Concurrently, design proactive algorithms to offer seamless downgrades to more affordable DSL or lower-bandwidth plans before financial strain triggers a complete service cancellation.
 
 ### 2. Redefining Loyalty (Survivorship Bias & Trailing Indicators)
-* **Finding:** Correlation matrices show high `tenure` is inversely related to churn risk.
-* **Diagnosis:** `Tenure` is a trailing indicator, not a causal metric. The near-zero churn in high-tenure cohorts is a manifestation of *Survivorship Bias* — they remained because their local network infrastructure happened to be stable. Passive customers who continue paying are trapped in *Customer Inertia*, not necessarily loyal.
-* **Recommendation:** Cease relying on `tenure` as a safety metric. Shift focus to proactive Quality of Service (QoS) monitoring in regions showing high first-month churn spikes.
+* **Finding:** Correlation matrices indicate high `tenure` is inversely related to churn risk.
+* **Diagnosis:** Viewing `tenure` purely as a causal metric introduces analytical risk. The low churn in high-tenure cohorts largely reflects *Survivorship Bias* (they remained due to stable local infrastructure) and *Customer Inertia* (passive continuation). Passive customers are trapped in inertia, which is valuable but distinct from active loyalty.
+* **Recommendation:** Repurpose `tenure` as a probability weighting parameter rather than a standalone safety metric. Shift focus to proactive Quality of Service (QoS) monitoring in regions showing high first-month churn spikes, while executing low-friction maintenance to sustain the inertia of high-tenure cohorts.
 
 ### 3. Financial Retention Architecture (LTV vs. ARPU)
-* **Finding:** Month-to-month (MTM) customers generate the highest median revenue ($79 to $111+) but possess the maximum churn probability (43%). 
-* **Diagnosis:** Offering cash discounts to retain these high-risk entities is a financial flaw that destroys Average Revenue Per User (ARPU).
-* **Recommendation:** Execute *Ecosystem Lock-in*. Mandate an upgrade to a 1-year contract, compensated purely through the injection of Value-Added Services (VAS) such as priority tech support or streaming bundles. This sacrifices marginal Customer Acquisition Cost (CAC) to secure massive Customer Lifetime Value (LTV) cash flow.(Online Security, Tech Support) are strongly associated with lower churn rates
-
+* **Finding:** Month-to-month (MTM) customers generate high median revenue ($79 to $111+) but present a critical churn probability (43%). 
+* **Diagnosis:** Reacting to MTM churn risk by deploying direct cash discounts degrades Average Revenue Per User (ARPU) and merely delays attrition. The structural vulnerability is the lack of exit friction; MTM customers can leave without penalty.
+* **Recommendation:** Implement *Strategic Ecosystem Lock-in* via Choice Architecture. Shift the retention mechanism from financial reduction to value addition. Offer premium Value-Added Services (VAS)—specifically `Online Security` or `Priority Tech Support`, which strongly correlate with lower churn rates—at zero cost, strictly under the condition that the customer upgrades to a 1-year contract. This frames the transition as an organic customer upgrade, trading marginal short-term costs to secure long-term Customer Lifetime Value (LTV).
 ---
 
 ## Visualizations
